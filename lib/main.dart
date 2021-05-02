@@ -28,9 +28,12 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.w300),
             ),
       ),
-      home: CategoriesScreen(),
+      // app initial page load based on initial 
+      // route
+      initialRoute: '/',
       routes: {
-        '/category-meals': (ctx) => CategoryMealsScreen(),
+        '/': (ctx) => CategoriesScreen(),
+        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
       },
     );
   }
