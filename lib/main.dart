@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import './category_meals_screen.dart';
+import 'screens/category_meals_screen.dart';
 
-import './categories_screen.dart';
+import 'screens/categories_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,12 +23,13 @@ class MyApp extends StatelessWidget {
                 color: Color.fromRGBO(20, 51, 51, 1),
               ),
               title: TextStyle(
-                  fontSize: 20,
-                  fontFamily: 'RobotoCondensed',
-                  fontWeight: FontWeight.w300),
+                fontSize: 20,
+                fontFamily: 'RobotoCondensed',
+                fontWeight: FontWeight.w300,
+              ),
             ),
       ),
-      // app initial page load based on initial 
+      // app initial page load based on initial
       // route
       initialRoute: '/',
       routes: {
