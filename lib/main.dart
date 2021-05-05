@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/screens/meal_detail_screen.dart';
+import 'package:flutter_complete_guide/screens/tabs_screen.dart';
 import 'screens/category_meals_screen.dart';
 
 import 'screens/categories_screen.dart';
@@ -33,8 +35,23 @@ class MyApp extends StatelessWidget {
       // route
       initialRoute: '/',
       routes: {
-        '/': (ctx) => CategoriesScreen(),
+        '/': (ctx) => TabsScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+      },
+      // *when going to a route that is not registered
+      // *in router Map below function executed
+      onGenerateRoute: (settings) {
+        print(settings.arguments);
+        // *build the home screen when unknown path
+        // *is visited
+        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+      },
+
+      // *when nothing in routes match or onGenerateRoute
+      // *is not exist below runs
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
       },
     );
   }
